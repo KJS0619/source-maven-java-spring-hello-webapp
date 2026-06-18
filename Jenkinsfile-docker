@@ -1,5 +1,6 @@
 pipeline {
-  agent none  stages {
+  agent none  
+   stages {
     stage('Checkout') {
       agent {
         docker { image 'maven:3-eclipse-temurin-21' }
@@ -36,7 +37,7 @@ pipeline {
         sh 'docker image tag myhello:v1 kjs0619/myhello:v$BUILD_NUMBER' // Tagging with build number
         sh 'docker image tag myhello:v1 kjs0619/myhello:latest' // Tagging with latest
       }
-    
+    }
     stage('Push Container Image') {
       agent { label 'controller' }
       steps {
