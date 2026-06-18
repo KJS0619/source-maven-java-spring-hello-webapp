@@ -6,7 +6,5 @@
         name: myhello
         image: kjs0619/myhello:latest
         ports: 
-          - "80: 8080" ; 앞은 포트 뒤는 컨테이너 
-
-
+          - "80:8080"
 ...
